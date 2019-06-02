@@ -11,9 +11,28 @@ $darkcyan: hsl(192, 100%, 9%);
 $paleblue: hsl(207, 100%, 98%);
 
 body {
+    font-family: 'Open Sans', sans-serif;
     color: $darkcyan;
     padding: 0;
     margin: 0;
+
+    h1,h2 {
+        font-family: 'Poppins', sans-serif;
+    }
+
+    @include for-size(phone-only) {
+        h1 {
+            font-size: 1.7rem!important;
+        }
+
+        h2 {
+            font-size: 1.5rem!important;
+        }
+
+        h3 {
+            font-size: 1.3rem!important;
+        }
+    }
 }
 
 .container {
@@ -80,9 +99,9 @@ body {
 
     }
     @include for-size(phone-only) {
-        h1 {
-            font-size: 1.7rem;
-        }
+        // h1 {
+        //     font-size: 1.7rem;
+        // }
 
         button {
             margin: 1.5rem 0;
@@ -109,18 +128,42 @@ body {
         font-size: 1.2rem;
     }
 
-    .column-1 p:first-child::before {
+    .column-1 p::before {
         content: url('../images/icon-communities.svg');
         position: absolute;
         top: -5rem;
         transform: scale(0.8);
+        transform-origin: bottom left;
     }
 
-    .column-2 p:first-child::before {
+    .column-1 p::after {
+        content: "Communities Formed";
+        display: block;
+        font-size: 1.2rem;
+        font-weight: normal;
+        margin-top: 1rem;
+        text-align: center;
+        color: gray;
+        
+    }
+
+    .column-2 p::before {
         content: url('../images/icon-messages.svg');
         position: absolute;
         top: -5rem;
         transform: scale(0.8);
+        transform-origin: bottom left;
+    }
+
+    .column-2 p::after {
+        content: "Message Sent";
+        display: block;
+        font-size: 1.2rem;
+        font-weight: normal;
+        margin-top: 1rem;
+        text-align: center;
+        color: gray;
+        
     }
 
     @include for-size(phone-only) {
@@ -128,19 +171,26 @@ body {
             margin: 4rem 0 0;
         }
 
-        div[class*="column"] p::before {
-            // padding: 0;
-            top: -4rem!important;
-            transform: scale(0.65)!important;
-        }
+        // div[class*="column"] p::before {
+        //     // padding: 0;
+        //     top: -4rem!important;
+        //     transform: scale(0.65)!important;
+        // }
 
-        p:first-child {
-            font-size: 4rem;
-        }
-
-        p:last-child {
+        div[class*="column"] p::after {
+            margin-top: 0.7rem;
             font-size: 1rem;
         }
+
+        .column-2 p::before {
+            top: -4.5rem!important;
+            transform: scale(0.65)!important;
+        }
+        .column-2 p {
+            font-size: 3.8rem;
+        }
+
+
     }
 
 }

@@ -150,30 +150,16 @@ body {
 .info-1 {
     // margin: 2.5rem 0;
 
-    // &::before {
-    //     content:'';
-    //     background: url('../images/bg-section-top-desktop-1.svg') no-repeat bottom center;
-    //     background-size: 100%;
-    //     height: 200px;
-    //     width: 100%;
-    //     display: block;
-
-    // }
-        height: auto;
     &::before {
         content:'';
         background: url('../images/bg-section-top-desktop-1.svg') no-repeat bottom center;
         background-size: 100%;
-        height: auto;
+        height: 200px;
         width: 100%;
         display: block;
-        position: relative;
-        bottom: 0;
-        left:0;
-        top:0;
-        right:0;
 
     }
+
 
     &::after {
         content:'';
@@ -294,13 +280,13 @@ body {
         }
         &::before {
             background: url('../images/bg-section-top-mobile-2.svg') no-repeat bottom center;
-            background-size: cover;
+            background-size: 100%;
             height: 150px;
         }
 
         &::after {
-            background: url('../images/bg-section-bottom-mobile-2.svg') no-repeat bottom center;
-            background-size: cover;
+            background: url('../images/bg-section-bottom-mobile-2.svg') no-repeat top center;
+            background-size: 100%;
             height: 150px;
         }
 
@@ -337,15 +323,13 @@ body {
 
 .footer {
     overflow: hidden;
-
     &::before {
         content:'';
         background: url('../images/bg-footer-top-desktop.svg') no-repeat bottom center;
         background-size: 100%;
-        height: 200px;
-        width: 100%;
+        height: 158px;
         display: block;
-        margin: -0.1em;
+        margin-bottom: -5px;
     }
 
     .wrapper {
@@ -415,11 +399,11 @@ body {
     }
 
     @include for-size(phone-only) {
+
         &::before {
             background: url('../images/bg-footer-top-mobile.svg') no-repeat bottom center;
-            background-size: cover;  
+            background-size: 100%;  
             height: 100px;  
-            width: 100%;        
         }
 
         .wrapper {
@@ -453,6 +437,9 @@ body {
                     width: 100%;
                     margin: 0.5rem 0 1rem;
                 }
+                button {
+                    width: 50%;
+                }
             }
             
             margin-bottom: 5rem;    
@@ -478,6 +465,7 @@ body {
                     width: 100%;
                     margin: 0.5rem 0 1rem;
                 }
+
             }
             
         }

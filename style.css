@@ -106,21 +106,13 @@ body {
 }
 
 /* INFO-1 */
-.info-1 {
-  height: auto;
-}
 .info-1::before {
   content: "";
   background: url("../images/bg-section-top-desktop-1.svg") no-repeat bottom center;
   background-size: 100%;
-  height: auto;
+  height: 200px;
   width: 100%;
   display: block;
-  position: relative;
-  bottom: 0;
-  left: 0;
-  top: 0;
-  right: 0;
 }
 .info-1::after {
   content: "";
@@ -216,12 +208,12 @@ body {
   }
   .info-3::before {
     background: url("../images/bg-section-top-mobile-2.svg") no-repeat bottom center;
-    background-size: cover;
+    background-size: 100%;
     height: 150px;
   }
   .info-3::after {
-    background: url("../images/bg-section-bottom-mobile-2.svg") no-repeat bottom center;
-    background-size: cover;
+    background: url("../images/bg-section-bottom-mobile-2.svg") no-repeat top center;
+    background-size: 100%;
     height: 150px;
   }
   .info-3 .column-1 {
@@ -256,10 +248,9 @@ body {
   content: "";
   background: url("../images/bg-footer-top-desktop.svg") no-repeat bottom center;
   background-size: 100%;
-  height: 200px;
-  width: 100%;
+  height: 158px;
   display: block;
-  margin: -0.1em;
+  margin-bottom: -5px;
 }
 .footer .wrapper {
   background-color: #00252e;
@@ -312,9 +303,8 @@ body {
 @media (max-width: 599px) {
   .footer::before {
     background: url("../images/bg-footer-top-mobile.svg") no-repeat bottom center;
-    background-size: cover;
+    background-size: 100%;
     height: 100px;
-    width: 100%;
   }
   .footer .wrapper {
     padding: 2.5rem 0 1.5rem;
@@ -342,6 +332,9 @@ body {
     display: block;
     width: 100%;
     margin: 0.5rem 0 1rem;
+  }
+  .footer .column-2 form button {
+    width: 50%;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {

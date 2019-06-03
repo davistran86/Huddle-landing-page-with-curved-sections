@@ -3,7 +3,13 @@
       @media (max-width: 599px) { @content; }
     } @else if $size == tablet-only  {
       @media (min-width: 768px) and (max-width: 1023px) { @content; }
-    } 
+    } @else if $size == big-desktop {
+        @media (min-width: 1800px) { @content; }
+    }
+  }
+
+  @mixin for-big-desktop-up {
+    @media (min-width: 1800px) { @content; }
   }
 
 $pink: hsl(322, 100%, 66%);
@@ -204,7 +210,7 @@ body {
         content:'';
         background: url('../images/bg-section-top-desktop-1.svg') no-repeat bottom center;
         background-size: 100%;
-        height: 200px;
+        height: calc(200px + 5vh + 5vw);
         width: 100%;
         display: block;
 
@@ -215,7 +221,7 @@ body {
         content:'';
         background: url('../images/bg-section-bottom-desktop-1.svg') no-repeat top center;
         background-size: 100%;
-        height: 200px;
+        height: calc(200px + 5vh + 5vw);
         width: 100%;
         display: block;
     }
@@ -264,6 +270,18 @@ body {
             }
         }
 
+    }
+
+    @include for-size(big-desktop) {
+
+        &::before {
+            height: calc(200px + 5vw);
+        }
+
+        &::after {
+            height: calc(200px + 5vw);
+        }
+        
     }
     
 }
@@ -352,6 +370,18 @@ body {
             }
         }
 
+    }
+
+    @include for-size(big-desktop) {
+
+        &::before {
+            height: calc(200px + 5vw);
+        }
+
+        &::after {
+            height: calc(200px + 5vw);
+        }
+        
     }
     
 }
@@ -523,6 +553,14 @@ body {
         .column-3 {
             margin: 0 0 2rem;
         }
+    }
+
+    @include for-size(big-desktop) {
+
+        &::before {
+            height: calc(158px + 5vw);
+        }
+        
     }
 }
 
